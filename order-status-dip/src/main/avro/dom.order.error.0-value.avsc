@@ -1,0 +1,66 @@
+{
+  "type": "record",
+  "name": "OrderError",
+  "namespace": "dom.order.error.v0",
+  "doc": "Error information for failed order processing",
+  "fields": [
+    {
+      "name": "message_id",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Any unique identifier which may be used for de-duplication of messages during consumption",
+      "exmaple": "d59d8d8c-c781-11eb-b8bc-0242ac130003"
+    },
+    {
+      "name": "order_number",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "Identifier for the order as referenced within the seller's system",
+      "default": null
+    },
+    {
+      "name": "error_code",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Unique code identifying the type of error"
+    },
+    {
+      "name": "error_message",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Descriptive message explaining the error"
+    },
+    {
+      "name": "error_timestamp",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Timestamp when the error occurred in ISO-8601 format",
+      "example": "2022-12-28T16:55:30.252Z"
+    },
+    {
+      "name": "original_payload",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "JSON string representation of the original message that caused the error",
+      "default": null
+    }
+  ]
+}

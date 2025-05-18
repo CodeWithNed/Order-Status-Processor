@@ -1,0 +1,201 @@
+{
+  "type": "record",
+  "name": "OrderEnterprise",
+  "namespace": "dom.order.enterprise.v0",
+  "doc": "Order with enterprise information enriched from seller data",
+  "fields": [
+    {
+      "name": "message_id",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Any unique identifier which may be used for de-duplication of messages during consumption",
+      "exmaple": "d59d8d8c-c781-11eb-b8bc-0242ac130003"
+    },
+    {
+      "name": "seller_id",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Identifier for the seller who's products are contained in the order",
+      "exmaple": "USBL, CABL etc."
+    },
+    {
+      "name": "customer_number",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Customer number as referenced within the seller's system"
+    },
+    {
+      "name": "order_number",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Identifier for the order as referenced within the seller's system"
+    },
+    {
+      "name": "order_type",
+      "type": {
+        "type": "enum",
+        "name": "Order_Type",
+        "symbols": [
+          "ADHOC",
+          "ENTERPRISE"
+        ]
+      },
+      "default": "ENTERPRISE"
+    },
+    {
+      "name": "route_number",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "Route information of order delivery",
+      "default": null
+    },
+    {
+      "name": "delivery_date",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Delivery date of the order in the form of yyyy-MM-dd",
+      "example": "2021-11-16"
+    },
+    {
+      "name": "delivery_method",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "The delivery method for the order",
+      "example": "GROUND, WILL_CALL etc."
+    },
+    {
+      "name": "order_status",
+      "type": {
+        "type": "enum",
+        "name": "Order_Status",
+        "symbols": [
+          "SUBMIT",
+          "OPEN",
+          "DOWN_TO_ROUTING",
+          "LABEL",
+          "ROUTED",
+          "SHIPPED",
+          "CANCEL"
+        ]
+      },
+      "doc": "Status of the order in the seller system"
+    },
+    {
+      "name": "total_price",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String",
+          "java-class": "java.math.BigDecimal"
+        }
+      ],
+      "doc": "Total price of the order after considering substitutes, allocations and any other price adjustments",
+      "default": null
+    },
+    {
+      "name": "order_date",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "This field is used to represent the order date",
+      "default": null,
+      "example": "2023-01-25"
+    },
+    {
+      "name": "created_timestamp",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "This field is used to represent the created timestamp",
+      "default": null,
+      "example": "2022-12-28T16:55:30.252Z"
+    },
+    {
+      "name": "updated_timestamp",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "This field is used to represent the last modified timestamp",
+      "default": null,
+      "example": "2022-12-28T16:55:30.252Z"
+    },
+    {
+      "name": "enterprise_name",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "Name of the enterprise customer",
+      "default": null
+    },
+    {
+      "name": "enterprise_email",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "Contact email address for the enterprise",
+      "default": null
+    },
+    {
+      "name": "enterprise_telephone",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "Contact telephone number for the enterprise",
+      "default": null
+    },
+    {
+      "name": "enterprise_address",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "Business address of the enterprise",
+      "default": null
+    }
+  ]
+}

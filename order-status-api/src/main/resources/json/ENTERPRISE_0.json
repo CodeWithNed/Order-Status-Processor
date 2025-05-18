@@ -1,0 +1,12 @@
+{
+  "message_id": "1",
+  "customer_number": "ENT-000001",
+  "order_number": "324567",
+  "delivery_date": "2021-11-16",
+  "delivery_method": "GROUND",
+  "order_status": "SUBMIT",
+  "total_price": "12345",
+  "order_date": "2023-01-25",
+  "created_timestamp": "2022-12-28T16:55:30.252Z",
+  "updated_timestamp": "2022-12-28T16:55:30.252Z"
+}
